@@ -5,6 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -55,7 +56,7 @@ func paresLines(lines [][]string) []problem {
 	for i, p := range lines {
 		ret[i] = problem{
 			q: p[0],
-			a: p[1],
+			a: strings.TrimSpace(p[1]),
 		}
 	}
 	return ret
